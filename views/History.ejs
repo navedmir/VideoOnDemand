@@ -1,0 +1,62 @@
+<html>
+
+<head>
+
+
+  <style>
+    .videotitle {
+      margin: auto;
+      display: inline-block;
+      vertical-align: top;
+      padding-left: 10px;
+    }
+    
+    .headercss {
+      border: 0px;
+      margin-bottom: 0px;
+    }
+    
+    .videolist {
+      width: 70%;
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+
+  <% include header %>
+
+    <div class="page-header headercss">
+      <div class="container">
+        <div class="row-fluid">
+          <h1>History</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="container ">
+
+
+      <div class="list-group videolist">
+        <% for(var i=0; i < data.length; i++) { %>
+          <div class="list-group-item">
+            <video Id=<%=data[i].id %> class="left-block " controls width="320px" height="auto" >
+              <source src=<%=data[i].url %> type="video/mp4"> Your browser does not support the video tag.
+            </video>
+            <div class="videotitle ">
+              <h2><%=data[i].title %></h2></div>
+          </div>
+          <% } %>
+
+
+      </div>
+    </div>
+    <script>
+
+    </script>
+</body>
+
+</html>

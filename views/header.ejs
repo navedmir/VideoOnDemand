@@ -1,0 +1,35 @@
+
+  <script src="/assets/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <script src="/assets/js/bootstrap.min.js"></script>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header pull-left">
+      <a class="navbar-brand" href="#">VideoOnDemand</a>
+    </div>
+    <div class="navbar-header pull-right">
+      <ul class="nav navbar-nav pull-left">
+        <li>
+          <a href="/Home">Home</a>
+        </li>
+       
+         <li class="dropdown">
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings<b class="caret"></b></a>
+             <ul class="dropdown-menu">
+               <% if(ID.length<=0) { %>
+               <li><a href="/Login">Login</a></li>
+               <% }else{ %>
+               <li><a href="/Logout">Logout</a></li>
+               <li><a href="/History">History</a></li>
+               <% } %>
+                                             
+             </ul>
+          </li>
+          
+      </ul>
+      
+    </div>
+    
+  </div>
+</nav>

@@ -1,0 +1,111 @@
+<html>
+<% include header %>
+
+  <head>
+
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/assets/css/jquery.bxslider.css" type="text/css" />
+
+
+    <script src="/assets/js/jquery.fitvids.js"></script>
+    <script src="/assets/js/jquery.bxslider.js"></script>
+
+    <style>
+      video {
+        width: 100%;
+        margin-top: 0px;
+        margin-right: auto;
+        margin-bottom: 0px;
+        margin-left: auto;
+      }
+      
+      .aligntab {
+        position: absolute;
+        top: 30%;
+        left: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+
+
+
+
+
+
+
+    <div class="aligntab">
+      <ul class="bxslider">
+
+
+        <% for(var i=0; i < data.length; i++) { %>
+          <li>
+            <video Id=<%=data[i].id %> controls onclick="this.play();" title=
+              <%- JSON.stringify(data[i].title)  %> >
+                <source src=<%=data[i].contents[0].url %> type="video/mp4"> Your browser does not support the video tag.
+            </video>
+            <div style="text-align:center">
+              <b>   <%=data[i].title %></b>
+            </div>
+          </li>
+          <% } %>
+      </ul>
+
+    </div>
+
+
+
+
+
+
+
+    <script>
+      $(document).ready(function(){
+
+  
+  
+        
+$('.bxslider').bxSlider({
+  video: true,
+  useCSS: false,
+  minSlides: 2,
+  maxSlides: 4,
+  slideWidth:300,
+  slideMargin: 10,
+  captions:true
+});
+	$( "video" ).each(function( index ) {
+	var video=$(this)[0];
+    
+  video.addEventListener('click',function(){
+ event.preventDefault();
+
+
+              video.webkitRequestFullscreen();
+setHistory(video.id,video.currentSrc,video.title);
+},false);
+$(document).on('webkitfullscreenchange mozfullscreenchange fullscreenchange MSFullscreenChange', function(){
+if(!document.webkitFullscreenElement){
+                   
+					video.pause();
+				}
+});
+video.addEventListener('ended',function myHandler(e) {
+         document.webkitExitFullscreen();
+    });
+});
+
+            
+});
+ function setHistory(ID,url,title)
+ {
+  
+           $.get("/SaveHistory?Id="+ID+"&url="+url+"&title="+title, null);   
+ }
+    </script>
+  </body>
+
+</html>
