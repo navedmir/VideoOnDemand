@@ -36,7 +36,8 @@ https://videoondemand.herokuapp.com/
 - Home page shows list of videos.
 - When you click on a video it opens in full screen.
 - For saving History,you need to login in(Settings->Login)  
-- To view History (Settings->History)
+- To view History (Settings->History)  
+
 ## Mongo Structure
 ```bash
 {
