@@ -20,7 +20,7 @@ https://videoondemand.herokuapp.com/
 ```bash
           npm install  
 ```
-  *     
+       
 3) You might want to look into mongoUtil.js to change mongo url(it connects to local mongodb by default). 
 ```bash
           var uri = "mongodb://localhost:27017/VOD";
