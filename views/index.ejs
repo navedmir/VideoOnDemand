@@ -83,8 +83,19 @@ $('.bxslider').bxSlider({
   video.addEventListener('click',function(){
  event.preventDefault();
 
-
-              video.webkitRequestFullscreen();
+if (video.requestFullscreen) {
+    video.requestFullscreen();
+}
+else if (video.mozRequestFullScreen) {
+    video.mozRequestFullScreen();
+}
+else if (video.webkitRequestFullScreen) {
+    video.webkitRequestFullScreen();
+}
+else if (video.msRequestFullscreen) {
+    video.msRequestFullscreen();
+}
+              //video.webkitRequestFullscreen();
 setHistory(video.id,video.currentSrc,video.title);
 },false);
 $(document).on('webkitfullscreenchange mozfullscreenchange fullscreenchange MSFullscreenChange', function(){
