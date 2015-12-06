@@ -20,7 +20,7 @@ https://videoondemand.herokuapp.com/
 ```bash
           npm install  
 ```
-       
+  *     
 3) You might want to look into mongoUtil.js to change mongo url(it connects to local mongodb by default). 
 ```bash
           var uri = "mongodb://localhost:27017/VOD";
@@ -37,7 +37,23 @@ https://videoondemand.herokuapp.com/
 - When you click on a video it opens in full screen.
 - For saving History,you need to login in(Settings->Login)  
 - To view History (Settings->History)
-
+## Mongo Structure
+```bash
+{
+	"_id": ObjectId("56628c32ca2429b808c76971"),
+	"username": "testname",
+	"password": "encryptedpassword",
+	"ViewingHistory": [{
+		"id": "videoid",
+		"url": "videourl",
+		"title": "video title"
+	}, {
+		"id": "videoid",
+		"url": "videourl",
+		"title": "video title"
+	}]
+}  
+```
 **Note**:- 
 - This site stores cookies.Enable cookies and javascript in browser.  
 - This app works best with chrome
