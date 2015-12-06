@@ -39,7 +39,7 @@
 
     <div class="container ">
 
-
+        <% if(data.length>0) { %>
       <div class="list-group videolist">
         <% for(var i=0; i < data.length; i++) { %>
           <div class="list-group-item">
@@ -50,7 +50,9 @@
               <h2><%=data[i].title %></h2></div>
           </div>
           <% } %>
-
+           <% }else{ %>
+           <h2>No history yet</h2>
+            <% } %>
 
       </div>
     </div>
