@@ -20,9 +20,9 @@ History.prototype.History = function (req, res, next) {
 				var users = client.collection("users");
 				users.findOne({
 					'_id' : ObjectId(cookieuser)
-				}, function (err, result) {
-					pool.release(client);
-					var jsonobj = result.ViewingHistory;
+				}, function (err, result) {					
+					pool.release(client);				
+					var jsonobj = result.ViewingHistory||'';
 
 					res.render('History', {
 						ID : cookieuser,
@@ -45,9 +45,12 @@ History.prototype.SaveHistory = function (req, res, next) {
 
 	var videoObj = {};
 	videoObj.id = req.query.Id;
+	
 	videoObj.url = req.query.url;
 	videoObj.title = req.query.title;
-	var userId = req.cookies.userId;
+	var userId = req.cookies.userId||'';	
+	if(userId.length>0)
+	{
 	var pool = mongoUtil.connect();
 	pool.acquire(function (err, client) {
 		if (err) {
@@ -69,6 +72,9 @@ History.prototype.SaveHistory = function (req, res, next) {
 		}
 
 	});
+}
+else
+	console.log("user null");
 }
 
 module.exports = History;
