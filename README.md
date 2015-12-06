@@ -4,8 +4,13 @@ Video on demand(display) (VOD) are systems which allow users to select and watch
   
   
 
-![Vod preview](http://i.imgur.com/v5W9R4Z.png)
-
+![Vod preview](http://i.imgur.com/v5W9R4Z.png)  
+  
+  
+![Vod preview](http://i.imgur.com/5VBNqGj.png)  
+  
+    
+![Vod preview](http://i.imgur.com/zGOm7Qy.png)	
 ### Demo
 https://videoondemand.herokuapp.com/
 ### Config
