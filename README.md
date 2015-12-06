@@ -17,11 +17,19 @@ https://videoondemand.herokuapp.com/
 ## Setup
 1) You need running nodejs and MongoDB server.  
 2) Clone this repo to your desktop and run "npm install" to install all the dependencies.  
-  *     npm install  
-3) You might want to look into mongoUtil.js to change mongo url(it connects to local mongodb by default).  
- *     var uri = "mongodb://localhost:27017/VOD";
+```bash
+          npm install  
+```
+  *     
+3) You might want to look into mongoUtil.js to change mongo url(it connects to local mongodb by default). 
+```bash
+          var uri = "mongodb://localhost:27017/VOD";
+```
+ 
 4) Start app using command :-
-*     node app.js  
+```bash
+          node app.js  
+```      
 5)  You can access it at localhost:3000
  
 ## Working
