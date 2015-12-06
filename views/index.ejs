@@ -68,7 +68,7 @@
   
   
         
-$('.bxslider').bxSlider({
+var slider=$('.bxslider').bxSlider({
   video: true,
   useCSS: false,
   minSlides: 2,
@@ -76,6 +76,18 @@ $('.bxslider').bxSlider({
   slideWidth:300,
   slideMargin: 10,
   captions:true
+});
+$(document).keydown(function(e){
+    if (e.keyCode == 39) // Right arrow 
+    {
+        slider.goToNextSlide();
+        return false;
+    }
+    else if (e.keyCode == 37) // left arrow
+    {
+         slider.goToPrevSlide();
+        return false;
+   }
 });
 	$( "video" ).each(function( index ) {
 	var video=$(this)[0];
