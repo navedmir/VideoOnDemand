@@ -17,7 +17,7 @@ module.exports = {
 					});
 				},
 				destroy : function (client) {
-					client.end();
+					//console.log(client);					
 				},
 				max : 10,
 				// optional. if you set this, make sure to drain() (see step 3)
