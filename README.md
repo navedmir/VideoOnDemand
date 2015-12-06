@@ -1,7 +1,7 @@
 # VideoOnDemand
 ##    Introduction
 Video on demand(display) (VOD) are systems which allow users to select and watch/listen to video or audio content.
-![Vod preview](http://imgur.com/aUtiPxB)
+![Vod preview](http://imgur.com/v5W9R4Z)
 ### Config
  Server:- Node.js  
  Database:- MongoDB  
